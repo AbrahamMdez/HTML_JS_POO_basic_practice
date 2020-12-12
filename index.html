@@ -5,12 +5,36 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>OOP Proyect</title>
         <link rel="stylesheet" href="https://ux.ed.team/css/styles.css?201803301710">
-        <script defer src="JS/myFunction.js"></script>
+        <script defer type="module" src="JS/myFunction.js"></script>
     </head>
 
     <body>
-        <main class="ed-grid">
+        <header>
             <h1>Curses OOP</h1>
+        </header>
+        <div>
+            <form class="ed-grid m-grid-4" method="GET" id="form-course" action="#">
+                <label>
+                Name
+                <input type="text" id="name" name="name" placeholder="Name..." required>
+                </label>
+
+                <label>
+                Cover
+                <input type="text" id="cover" name="cover" placeholder="Cover..." required>
+                </label> 
+
+                <label>
+                Maths
+                <input type="number" id="maths" name="maths" min="1" placeholder="Amounth..." required>
+                </label>
+
+                <input type="submit" value="Create Course">
+            </form>
+        </div>
+        <main>
+            <section class="ed-grid m-grid-4 s-grid-2" id="courses">
+            </section>
         </main>
     </body>
 
