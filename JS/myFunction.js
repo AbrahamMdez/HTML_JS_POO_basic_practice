@@ -2,6 +2,7 @@ import curse from './maths.js';
 
 //Actua en el id Course que esta en el section.
 const element = document.querySelector('section#courses');
+const form = document.querySelector('form#form-course');
 
 //Creamos una funcion flecha, con un atributo course.
 const printCourse = course => {
@@ -19,8 +20,20 @@ const printCourse = course => {
     element.appendChild(son);
 }
 
-printCourse(html);
-printCourse(css);
+//Aqui decimos que en el formulario(constante ya creada), escuche al evento submit y hacemos una funcion.
+//en el parametro 'e', nos referimos al evento de pulsar send en el boton.
+form.addEventListener('submit', e => {
+    //prevent defaul lo que hace es detener la activacion de enviar el formulario,
+    //sin perjudicar al resto de funciones.
+    e.preventDefault();
+    //target se refiere a donde recae el evento 'e'.
+    const target = e.target;
+    const newCourse = new curse (target.cover.value, target.cover.value, target.maths.value);
+    printCourse(newCourse);
+});
+
+
+
 
 
 
