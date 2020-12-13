@@ -1,8 +1,14 @@
 import curse from './maths.js';
+import teachers from './teachers.js';
+import pupils from './pupils.js';
 
 //Actua en el id Course que esta en el section.
 const element = document.querySelector('section#courses');
 const form = document.querySelector('form#form-course');
+const user1= new pupils ('Abraham', 'Menendez', 'amg@gm.es', true, 'html');
+const user2 = new pupils ('Adrian', 'Gonzalez', 'adf@gg.com', true, 'css');
+const teacher1 = new teachers ('Raquel', 'Romero', 'rr@su.es', true, 'git');
+const html = new curse('HTML desde cero', 'img/html.jpg', 7);
 
 //Creamos una funcion flecha, con un atributo course.
 const printCourse = course => {
@@ -30,7 +36,10 @@ form.addEventListener('submit', e => {
     const target = e.target;
     const newCourse = new curse (target.cover.value, target.cover.value, target.maths.value);
     printCourse(newCourse);
+    form.reset();
 });
+
+newCourse.setInscriptions([user1, user2]);
 
 
 
